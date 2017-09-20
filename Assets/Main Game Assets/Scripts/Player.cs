@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     {
         spawnPoints = playerSpawnPoint.GetComponentsInChildren<Transform>();
         fades = FindObjectsOfType<FadeAlpha>();
-        playerLife = 100;
+        playerLife = 50;
     }
 
     private void ReSpawn()
@@ -77,8 +77,6 @@ public class Player : MonoBehaviour
 
     void Update() //T-toggle
     {
-       // playerLife -= 1;  //TODO: remove later
-
         if (Input.GetButton("Fire1"))
         {
             LazerBeam();
@@ -116,8 +114,8 @@ public class Player : MonoBehaviour
 
         if (playerLife <=0)
         {
-            playerLife = 100;
-            SceneManager.LoadScene(2);
+            playerLife = 50;
+            SceneManager.LoadScene(3);
         }
     }
 
